@@ -1,0 +1,49 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <ignoreFiles list="*$py.class;*.hprof;*.pyc;*.pyo;*.rbc;*.yarb;*~;.DS_Store;.git;.hg;.svn;CVS;__pycache__;_svn;vssver.scc;vssver2.scc;" />
+    <extensionMap>
+      <mapping pattern="data1" type="CSV file" />
+      <mapping pattern="sent_no_yield" type="PLAIN_TEXT" />
+      <mapping pattern="textbtc" type="PLAIN_TEXT" />
+      <mapping pattern="tweets" type="PLAIN_TEXT" />
+      <mapping pattern="d" type="PLAIN_TEXT" />
+      <mapping pattern="tweet_count" type="PLAIN_TEXT" />
+      <mapping pattern="words1q" type="PLAIN_TEXT" />
+      <mapping pattern="bitcoinStories" type="PLAIN_TEXT" />
+      <mapping pattern="Huaan" type="PLAIN_TEXT" />
+      <mapping pattern="ddd" type="PLAIN_TEXT" />
+      <mapping pattern="btcLONGprice" type="PLAIN_TEXT" />
+      <mapping pattern="GoldPriceRue" type="PLAIN_TEXT" />
+      <mapping pattern="SHENZ0" type="PLAIN_TEXT" />
+      <mapping pattern="GoldPricex" type="PLAIN_TEXT" />
+      <mapping pattern="5mingold" type="PLAIN_TEXT" />
+      <mapping pattern="text" type="PLAIN_TEXT" />
+      <mapping pattern="btcstory" type="PLAIN_TEXT" />
+      <mapping pattern="btcLONGstories" type="PLAIN_TEXT" />
+      <mapping pattern="sentiments" type="PLAIN_TEXT" />
+      <mapping pattern="data" type="PLAIN_TEXT" />
+      <mapping pattern="reuters" type="PLAIN_TEXT" />
+      <mapping pattern="GoldPrice" type="PLAIN_TEXT" />
+      <mapping pattern="words_med" type="PLAIN_TEXT" />
+      <mapping pattern="words_small" type="PLAIN_TEXT" />
+      <mapping pattern="daily" type="PLAIN_TEXT" />
+      <mapping pattern="notes" type="PLAIN_TEXT" />
+      <mapping pattern="3day" type="PLAIN_TEXT" />
+      <mapping pattern="data2" type="PLAIN_TEXT" />
+      <mapping pattern="bitcoin" type="PLAIN_TEXT" />
+      <mapping pattern="sentiment" type="PLAIN_TEXT" />
+      <mapping pattern="BITCOINSTORIES1" type="PLAIN_TEXT" />
+      <mapping pattern="quick formula" type="PLAIN_TEXT" />
+      <mapping pattern="chromedriver" type="PLAIN_TEXT" />
+      <mapping pattern="polarity" type="PLAIN_TEXT" />
+      <mapping pattern="cctweet_count" type="PLAIN_TEXT" />
+      <mapping pattern="stimulus" type="PLAIN_TEXT" />
+      <mapping pattern="shang" type="PLAIN_TEXT" />
+      <mapping pattern="intra_gold" type="PLAIN_TEXT" />
+      <mapping pattern="GoldStoryCount2" type="PLAIN_TEXT" />
+      <mapping pattern="documentation" type="PLAIN_TEXT" />
+      <mapping ext="text" type="PLAIN_TEXT" />
+      <mapping ext="kv" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>

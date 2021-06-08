@@ -1,0 +1,6 @@
+codes.rudolph.idea.cfg
+com.andrey4623.rainbowcsv
+com.chesterccw.excelreader
+com.jetbrains.plugins.ini4idea
+gdscript
+net.seesharpsoft.intellij.plugins.csv
