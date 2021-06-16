@@ -15,7 +15,7 @@ def do_check(driver, link):
     # basically, we know that if we havent checked in a while (i.e. before a run of the system) then there will be a lot of new ones
     # but if we are running automatically, realistically only 1 will pop up (at the very extreme 4) within our 30 second period
     # so only checking the most recent 4 would be worth it, saving lots of computing time
-    string = re.findall(r'class="result-title hdrlnk" data-id="(.*?)</a>', str(soup))[:4]
+    string = re.findall(r'class="result-title hdrlnk" data-id="(.*?)</a>', str(soup))[:8]
     ids = [x.split('"')[0] for x in string]
     links = [x.split('"')[2] for x in string]
     names = [x.split('>')[1] for x in string]
@@ -43,7 +43,7 @@ def check_craig():
     options.headless = True
     driver1 = webdriver.Chrome(executable_path=r'../g1/chromedriver', options=options)
     # put in desired url. right now set to pedals
-    url = 'https://charlotte.craigslist.org/d/musical-instruments-by-owner/search/msg?sort=date&query=-cymbal%20-horns%20-violin%20-drum%20-flute%20-piano%20-horn%20-keybord%20-ukelele%20-saxophone%20-trumpet%20-alto%20-sax'
+    url = 'https://washington.craigslist.org/d/musical-instruments-by-owner/search/msg?sort=date&query=-cymbal%20-horns%20-violin%20-drum%20-flute%20-piano%20-horn%20-keybord%20-ukelele%20-saxophone%20-trumpet%20-alto%20-sax'
     url_base = 'https://washingtondc.craigslist.org/search/msg?query='
     extra = '-cymbal+-horns+-violin+-drum+-flute+-piano+-horn+-keybord+-ukelele+-saxophone+-trumpet+-alto+-sax&purveyor-input=owner'
     # used boss for testing purposes. words_to_check is where you input desired words
@@ -55,7 +55,7 @@ def check_craig():
         return
     print(results)
     if results != '':
-        send_mail.send_email('Found new items CLT ', str(results))
+        send_mail.send_email('Found new items DC ', str(results))
     driver1.close
 
 
