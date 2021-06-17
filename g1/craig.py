@@ -59,6 +59,29 @@ def check_craig():
     driver1.close
 
 
+def try_craig():
+    try:
+        options = webdriver.ChromeOptions()
+        options.headless = True
+        driver1 = webdriver.Chrome(executable_path=r'../g1/chromedriver', options=options)
+        # put in desired url. right now set to pedals
+        url = 'https://washington.craigslist.org/d/musical-instruments-by-owner/search/msg?sort=date&query=-cymbal%20-horns%20-violin%20-drum%20-flute%20-piano%20-horn%20-keybord%20-ukelele%20-saxophone%20-trumpet%20-alto%20-sax'
+        url_base = 'https://washingtondc.craigslist.org/search/msg?query='
+        extra = '-cymbal+-horns+-violin+-drum+-flute+-piano+-horn+-keybord+-ukelele+-saxophone+-trumpet+-alto+-sax&purveyor-input=owner'
+        # used boss for testing purposes. words_to_check is where you input desired words
+        results = 'New items: '
+        found, link = do_check(driver1, url)
+        if found:
+            results = results + str(link) + '\n '
+        else:
+            return
+        print(results)
+        if results != '':
+            send_mail.send_email('Found new items DC ', str(results))
+        driver1.close
+    except:
+        print('wifi failed, try again')
+
 if __name__ == '__main__':
     check_craig()
 

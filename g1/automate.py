@@ -2,9 +2,11 @@ import check3
 
 import schedule
 
-check3.check_words()
+check3.try_check()
+check3.wipe_file()
 
-schedule.every(15).seconds.do(check3.check_words)
+schedule.every(15).seconds.do(check3.try_check)
+schedule.every(2).hours.do(check3.wipe_file)
 
 
 while True:

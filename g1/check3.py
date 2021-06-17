@@ -56,6 +56,35 @@ def check_words():
         send_mail.send_email(results, str(results))
     driver1.close()
 
+def wipe_file():
+    f = open('already_found', 'w')
+    f.close
+
+def try_check():
+    try:
+        options = webdriver.ChromeOptions()
+        options.headless = True
+        driver1 = webdriver.Chrome(executable_path=r'../g1/chromedriver', options=options)
+        # put in desired url. right now set to pedals
+        url = 'https://reverb.com/marketplace?query=%20&condition=used'
+        # used boss for testing purposes. words_to_check is where you input desired words
+        words_to_check = ['contemporary stratocaster', 'mira x', 'starla x', 'shell pink', 'king of tone',
+                          'allen amplification', 'oldfield', 'analogman', 'bass vi', 'keeley mod', 'JHS mod',
+                          'grandma hannon', 'dimarzio', 'seymour duncan', '| demo', 'baritone', 'kiesel', 'strandberg',
+                          'vela semi hollow', 'vela semi-hollow', 'lollar', 'knaggs', 'mastery', 'staytrem', 'baby z',
+                          'yamaha thr']
+        results = ''
+        for word in words_to_check:
+            found, link = do_check(driver1, url, word)
+            if found:
+                results = results + str(link) + '\n '
+        print(results)
+        if results != '':
+            send_mail.send_email(results, str(results))
+        driver1.close()
+    except:
+        print('wifi failed, trying again in 15')
+
 
 if __name__ == '__main__':
     check_words()
