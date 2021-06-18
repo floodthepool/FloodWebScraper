@@ -22,7 +22,7 @@ def do_check(driver, link):
     #names = [x.split('>')[1] for x in string]
 
     found_links = ''
-    f = open('already_fb', 'r')
+    f = open('already_fb_NC', 'r')
     x = f.read()
     count = 0
     found = False
@@ -32,7 +32,7 @@ def do_check(driver, link):
             found_links += string[count] + ': ' + price[count] + '\n\n'
         count += 1
     f.close()
-    f = open('already_fb', 'w')
+    f = open('already_fb_NC', 'w')
     f.write(str(string))
     f.close()
     new = False
@@ -43,7 +43,7 @@ def check_fb():
     options.headless = True
     driver1 = webdriver.Chrome(executable_path=r'../g1/chromedriver', options=options)
     # put in desired url. right now set to pedals
-    url = 'https://www.facebook.com/marketplace/105698576131500/instruments?daysSinceListed=1&deliveryMethod=local_pick_up&sortBy=creation_time_descend&itemCondition=used&exact=false'
+    url = 'https://www.facebook.com/marketplace/105696062797469/instruments/?daysSinceListed=1&deliveryMethod=local_pick_up&sortBy=creation_time_descend&exact=false'
     url_base = 'https://washingtondc.craigslist.org/search/msg?query='
     extra = '-cymbal+-horns+-violin+-drum+-flute+-piano+-horn+-keybord+-ukelele+-saxophone+-trumpet+-alto+-sax&purveyor-input=owner'
     # used boss for testing purposes. words_to_check is where you input desired words
@@ -55,7 +55,7 @@ def check_fb():
         return
     print(results)
     if results != '':
-        send_mail.send_email('Found new items DC ', str(results))
+        send_mail.send_email('Found new items facebook NC', str(results))
     driver1.close
 
 def try_fb():
@@ -64,7 +64,7 @@ def try_fb():
         options.headless = True
         driver1 = webdriver.Chrome(executable_path=r'../g1/chromedriver', options=options)
         # put in desired url. right now set to pedals
-        url = 'https://www.facebook.com/marketplace/105698576131500/instruments?daysSinceListed=1&deliveryMethod=local_pick_up&sortBy=creation_time_descend&itemCondition=used&exact=false'
+        url = 'https://www.facebook.com/marketplace/105696062797469/instruments/?daysSinceListed=1&deliveryMethod=local_pick_up&sortBy=creation_time_descend&exact=false'
         url_base = 'https://washingtondc.craigslist.org/search/msg?query='
         extra = '-cymbal+-horns+-violin+-drum+-flute+-piano+-horn+-keybord+-ukelele+-saxophone+-trumpet+-alto+-sax&purveyor-input=owner'
         # used boss for testing purposes. words_to_check is where you input desired words
@@ -76,7 +76,7 @@ def try_fb():
             return
         print(results)
         if results != '':
-            send_mail.send_email('Found new items facebook DC ', str(results))
+            send_mail.send_email('Found new items facebook NC', str(results))
         driver1.close
     except:
         print('wifi failed')
