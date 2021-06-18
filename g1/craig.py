@@ -10,7 +10,7 @@ def do_check(driver, link):
     time.sleep(1)
     html_source = driver.page_source
     soup = BeautifulSoup(html_source, 'html.parser')
-    # print(str(soup))
+    print(str(soup))
     # only checking if one of the top 4 is new, otherwise slow checking a lot of old stuff.
     # basically, we know that if we havent checked in a while (i.e. before a run of the system) then there will be a lot of new ones
     # but if we are running automatically, realistically only 1 will pop up (at the very extreme 4) within our 30 second period
